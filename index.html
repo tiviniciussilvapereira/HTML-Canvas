@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>HTML Canvas</title>
+    
+</head>
+<style type="text/css">
+    *{
+        margin: 0;
+        top: 0;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+    p{
+        margin-top: 5px;
+    }
+    section{
+        width: 100%;
+        height: 40ch;
+        padding: 4rem;    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;       
+    }
+    section:nth-child(2n){
+        background-color: rgb(237, 238, 243);
+    }
+    .canvas-container{
+        width: 100%;
+        max-width: 1300px;
+        margin-top: 25px;    
+        display: grid;
+        place-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;  
+    }
+
+</style>
+
+<body>
+    <section>
+        <h1>Exemplos de aplicação com o Canvas</h1>
+        <p>Manipulação de linhas dentro do canvas via JS</p>
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasLine1" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasLine1");
+                        var ctx = c.getContext("2d");
+                        ctx.moveTo(0,0);
+                        ctx.lineTo(400,200);
+                        ctx.stroke();
+                    </script>  
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasLine2" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasLine2");
+                        var ctx = c.getContext("2d");
+                        ctx.moveTo(0,0);
+                        ctx.lineTo(200,100);
+                        ctx.moveTo(200,100);
+                        ctx.lineTo(400,0);
+                        ctx.stroke();
+                    </script>  
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasLine3" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasLine3");
+                        var ctx = c.getContext("2d");
+                        ctx.moveTo(0,0);
+                        ctx.lineTo(200,100);
+                        ctx.moveTo(200,100);
+                        ctx.lineTo(400,100);
+                        ctx.moveTo(100,100);
+                        ctx.stroke();
+                    </script>  
+            </div>
+        </div>  
+    </section>
+
+    <section>
+        <h1>Criando um arco dentro do Canvas</h1>
+        <p>Manipulando arcos dentro do canvas</p>
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasArc" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasArc");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();
+                        ctx.arc(200, 100, 80, 0, 2 * Math.PI);
+                        ctx.stroke();
+                    </script>  
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasArc2" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasArc2");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();
+                        ctx.arc(100, 00, 80, 0, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(300, 200, 80, 0, 2 * Math.PI);
+                        ctx.stroke();                       
+                    </script>  
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasArc3" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasArc3");
+                        var ctx = c.getContext("2d");
+                        ctx.beginPath();
+                        ctx.arc(100, 100, 80, 1, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.beginPath();
+                        ctx.arc(100, 100, 70, 2, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(100, 100, 60, 3, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(100, 100, 50, 4, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(100, 100, 40, 5, 2 * Math.PI);
+                        ctx.stroke();
+
+                        ctx.beginPath();
+                        ctx.arc(300, 100, 80, 0, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(300, 100, 70, 0, 01 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(300, 100, 60, 3, 2 * Math.PI);
+                        ctx.stroke();
+                        ctx.beginPath();
+                        ctx.arc(300, 100, 50, 0, 1 * Math.PI);
+                        ctx.stroke();
+                    </script>  
+            </div>
+            
+        </div>  
+
+    </section>
+
+    <section>
+        <h1>String</h1>
+        <p>Manipulando Strings dentro do Canvas</p>
+        <div class="canvas-container">
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasText" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasText");
+                        var ctx = c.getContext("2d");
+                        ctx.font = "30px Open Sans";
+                        ctx.fillText("Fill Text", 140, 110);
+                    </script> 
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasText2" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasText2");
+                        var ctx = c.getContext("2d");
+                        ctx.font = "50px Open Sans";
+                        ctx.strokeText("Stroke Text", 60, 110);
+                    </script> 
+            </div>
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasText3" width="400" height="200" style="border:1px solid #000000;">
+                    <script>
+                        var c = document.getElementById("myCanvasText3");
+                        var ctx = c.getContext("2d");
+                        ctx.font = "30px Open Sans";
+                        ctx.fillText("Eu sou um Fill Text", 60, 70);
+                        ctx.strokeText("Eu sou um Stroke Text", 40, 130);
+                    </script> 
+            </div>
+        </div>  
+    </section>
+
+    <section>
+        <h1>Misturando elementos</h1>
+        <p>Aplicando uma variavel de arco com texto</p>
+        <div class="canvas-container">
+            <canvas id="myCanvas4" width="400" height="200" style="border:1px solid #000000;">
+            <script>
+                var c = document.getElementById("myCanvas4");
+                var ctx = c.getContext("2d");
+                ctx.font = "30px Open Sans";
+                ctx.fillText("Mixing Things", 105, 100);
+                ctx.beginPath();
+                ctx.arc(200, 100, 80, 0, 1 * Math.PI);
+                ctx.stroke();
+            </script>  
+        </div>  
+    </section>
+</body>
+</html>
