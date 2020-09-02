@@ -43,43 +43,43 @@
 
 <body>
     <section>
-        <h1>Exemplos de aplicação com o Canvas</h1>
-        <p>Manipulação de linhas dentro do canvas via JS</p>
+        <h1>Manipulando Lingas dentro do Canvas</h1>
+        <p>.linetTo e .moveTo</p>
         <div class="canvas-container">
             <div class="canvas-wrapper">
                 <canvas id="myCanvasLine1" width="400" height="200" style="border:1px solid #000000;">
-                    <script>
-                        var c = document.getElementById("myCanvasLine1");
-                        var ctx = c.getContext("2d");
-                        ctx.moveTo(0,0);
-                        ctx.lineTo(400,200);
-                        ctx.stroke();
-                    </script>  
+                <script>
+                    var c = document.getElementById("myCanvasLine1");
+                    var ctx = c.getContext("2d");
+                    ctx.moveTo(0,0);
+                    ctx.lineTo(400,200);
+                    ctx.stroke();
+                </script>  
             </div>
             <div class="canvas-wrapper">
                 <canvas id="myCanvasLine2" width="400" height="200" style="border:1px solid #000000;">
-                    <script>
-                        var c = document.getElementById("myCanvasLine2");
-                        var ctx = c.getContext("2d");
-                        ctx.moveTo(0,0);
-                        ctx.lineTo(200,100);
-                        ctx.moveTo(200,100);
-                        ctx.lineTo(400,0);
-                        ctx.stroke();
-                    </script>  
+                <script>
+                    var c = document.getElementById("myCanvasLine2");
+                    var ctx = c.getContext("2d");
+                    ctx.moveTo(0,0);
+                    ctx.lineTo(200,100);
+                    ctx.moveTo(200,100);
+                    ctx.lineTo(400,0);
+                    ctx.stroke();
+                </script>  
             </div>
             <div class="canvas-wrapper">
                 <canvas id="myCanvasLine3" width="400" height="200" style="border:1px solid #000000;">
-                    <script>
-                        var c = document.getElementById("myCanvasLine3");
-                        var ctx = c.getContext("2d");
-                        ctx.moveTo(0,0);
-                        ctx.lineTo(200,100);
-                        ctx.moveTo(200,100);
-                        ctx.lineTo(400,100);
-                        ctx.moveTo(100,100);
-                        ctx.stroke();
-                    </script>  
+                <script>
+                    var c = document.getElementById("myCanvasLine3");
+                    var ctx = c.getContext("2d");
+                    ctx.moveTo(0,0);
+                    ctx.lineTo(200,100);
+                    ctx.moveTo(200,100);
+                    ctx.lineTo(400,100);
+                    ctx.moveTo(100,100);
+                    ctx.stroke();
+            </script>  
             </div>
         </div>  
     </section>
@@ -147,9 +147,7 @@
                         ctx.stroke();
                     </script>  
             </div>
-            
-        </div>  
-
+        </div> 
     </section>
 
     <section>
@@ -188,19 +186,53 @@
     </section>
 
     <section>
-        <h1>Misturando elementos</h1>
-        <p>Aplicando uma variavel de arco com texto</p>
+        <h1>Misturando Elementos</h1>
+        <p>Misturando diferentes elementos gráficos dentro do container Canvas </p>
         <div class="canvas-container">
-            <canvas id="myCanvas4" width="400" height="200" style="border:1px solid #000000;">
-            <script>
-                var c = document.getElementById("myCanvas4");
-                var ctx = c.getContext("2d");
-                ctx.font = "30px Open Sans";
-                ctx.fillText("Mixing Things", 105, 100);
-                ctx.beginPath();
-                ctx.arc(200, 100, 80, 0, 1 * Math.PI);
-                ctx.stroke();
-            </script>  
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasMix1" width="400" height="200" style="border:1px solid #000000;">
+                <script>
+                    var c = document.getElementById("myCanvasMix1");
+                    var ctx = c.getContext("2d");
+                    ctx.font = "30px Open Sans";
+                    ctx.fillText("Mixing Things", 105, 100);
+                    ctx.beginPath();
+                    ctx.arc(200, 100, 80, 0, 1 * Math.PI);
+                    ctx.stroke();
+                </script>  
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasMix2" width="400" height="200" style="border:1px solid #000000;">
+                <script>
+                    var c = document.getElementById("myCanvasMix2");
+                    var ctx = c.getContext("2d");
+                    var grd = ctx.createLinearGradient(0, 0, 400, 0);
+                    grd.addColorStop(0, "lightblue");
+                    grd.addColorStop(1, "lightpink");
+                    ctx.fillStyle = grd;
+                    ctx.fillRect(0, 0, 600, 200);
+                    ctx.font = "50px Open Sans";
+                    ctx.strokeText("Gradient", 90, 110);
+                </script>  
+            </div>
+
+            <div class="canvas-wrapper">
+                <canvas id="myCanvasMix3" width="400" height="200" style="border:1px solid #000000;">
+                <script>
+                    var c = document.getElementById("myCanvasMix3");
+                    var ctx = c.getContext("2d");
+
+                    ctx.beginPath();
+                    ctx.arc(200, 100, 80, 0, 1 * Math.PI);
+                    ctx.stroke();
+                    ctx.moveTo(0,0);
+                    ctx.lineTo(120,100);
+                    ctx.moveTo(280,100);
+                    ctx.lineTo(400,100);
+                    ctx.stroke();
+                </script>  
+            </div>
         </div>  
     </section>
 </body>
